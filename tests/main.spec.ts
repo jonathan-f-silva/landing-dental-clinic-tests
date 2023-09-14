@@ -32,6 +32,8 @@ test("Check main features are visible", async ({ page }) => {
   await expect(
     page.getByRole("img", { name: "Banner principal" })
   ).toBeVisible();
+
+  await expect(page).toHaveScreenshot({ fullPage: true });
 });
 
 test("Dashboard works", async ({ page }) => {
@@ -65,8 +67,8 @@ test("Dashboard works", async ({ page }) => {
 
   // 2. Verificando alterações na Home
 
-  // recarregando a página
-  // await page.reload();
+  // recarregando a página deve manter as alterações
+  await page.reload();
 
   await page.getByRole("link", { name: "Home" }).click();
 
@@ -93,4 +95,6 @@ test("Dashboard works", async ({ page }) => {
       exact: true,
     })
   ).toBeVisible();
+
+  await expect(page).toHaveScreenshot({ fullPage: true });
 });
