@@ -1,4 +1,4 @@
-# landing-dental-clinic-tests
+# landing-pages-tests
 
 Testes E2E para o projeto de landing page.
 
